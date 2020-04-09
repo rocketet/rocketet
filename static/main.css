@@ -8,6 +8,10 @@ body {
     color: #444444;
   }
 
+  .centered {
+    text-align: center;
+  }
+
   .bg-green {
     background-color: #4c835d;
   }
