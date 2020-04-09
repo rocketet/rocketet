@@ -1,9 +1,7 @@
-from flask import Flask, render_template, url_for, flash, redirect
-from forms import SignupForm, LoginForm
-app = Flask(__name__)
-
-app.config["SECRET_KEY"] = "0f0a2448bd028146bfa8f615ff308525"
-
+from flask import render_template, url_for, flash, redirect
+from chatapp import app
+from chatapp.forms import SignupForm, LoginForm
+from chatapp.models import User, Post
 
 @app.route("/")
 @app.route("/home")
@@ -34,6 +32,3 @@ def login():
         else:
             flash("Login unsuccessful. Please check username and password." , "danger")
     return render_template("login.html", title="Login", form=form)
-
-if __name__ == '__main__':
-    app.run(debug=True)
