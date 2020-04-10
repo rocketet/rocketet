@@ -1,12 +1,25 @@
 {% extends "layout.html" %}
 {% block content %}
-<h1 class="centered">Welcome to ChatApp</h1>
-<h5 class="centered">An open source chatting web app.</h5>
-<h3 class="centered">
-    {% if current_user.is_authenticated %}
-        <a class="btn btn-success" href="/chat">Start Chatting</a>
-    {% else %}
-        <a class="btn btn-success" href="/signup">Start Chatting</a>
-    {% endif %}
-</h3>
+    <h1 class="centered">Welcome to ChatApp</h1>
+    <h5 class="centered">An open source chatting web app.</h5>
+    <h3 class="centered">
+        {% if current_user.is_authenticated %}
+            <a class="btn btn-success" href="{{ url_for('chat') }}">Start Chatting</a>
+        {% else %}
+            <a class="btn btn-success" href="{{ url_for('signup') }}">Start Chatting</a>
+        {% endif %}
+    </h3>
+    {% for post in posts %}
+        <article class="media content-section">
+            <img class="rounded-circle article-img" src="{{ url_for('static', filename='profile_pics/' + post.author.image_file) }}">
+            <div class="media-body">
+            <div class="article-metadata">
+                <a class="mr-2" href="#">{{ post.author.username }}</a>
+                <small class="text-muted">{{ post.date_posted.strftime('%b %d, %Y') }}{% if post.edited %} (Edited){% endif %}</small>
+            </div>
+            <h2><a class="article-title" href="{{ url_for('post', post_id=post.id) }}">{{ post.title }}</a></h2>
+            <p class="article-content">{{ post.content }}</p>
+            </div>
+        </article>
+    {% endfor %}
 {% endblock content %}
