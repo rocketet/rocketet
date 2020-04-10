@@ -6,3 +6,4 @@ migrations/env.py
 migrations/README
 migrations/script.py.mako
 migrations/versions/b91586580e7a_.py
+chatapp/static/profile_pics/*.png
