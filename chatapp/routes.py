@@ -53,3 +53,8 @@ def logout():
 @login_required
 def account():
     return render_template("account.html", title="Account")
+
+@app.route("/chat")
+@login_required
+def chat():
+    return redirect(url_for("index"))
