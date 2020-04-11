@@ -1,14 +1,11 @@
 {% extends "layout.html" %}
 {% block content %}
-    <h1 class="centered">Welcome to ChatAppConnect</h1>
-    <h5 class="centered">An open source chatting web app.</h5>
-    <h3 class="centered">
-        {% if current_user.is_authenticated %}
-            <a class="btn btn-success" href="{{ url_for('chat') }}">Start Chatting</a>
-        {% else %}
-            <a class="btn btn-success" href="{{ url_for('signup') }}">Start Chatting</a>
-        {% endif %}
-    </h3>
+    <div>
+        <img class="rounded-circle profile-img" src="{{ url_for('static', filename='profile_pics/' + user.image_file) }}">
+        <h1 class="mb-3">{{ user.username }}</h1>
+        <p class="mb-3">{{ posts.total }} posts</p>
+        <br>
+    </div>
     {% for post in posts.items %}
         <article class="media content-section">
             <img class="rounded-circle article-img" src="{{ url_for('static', filename='profile_pics/' + post.author.image_file) }}">
@@ -25,9 +22,9 @@
     {% for page_num in posts.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %}
         {% if page_num %}
             {% if posts.page == page_num %}
-                <a class="btn btn-info mb-4" href="{{ url_for('index', page=page_num) }}">{{ page_num }}</a>
+                <a class="btn btn-info mb-4" href="{{ url_for('user_profile', username=user.username, page=page_num) }}">{{ page_num }}</a>
             {% else %}
-                <a class="btn btn-outline-info mb-4" href="{{ url_for('index', page=page_num) }}">{{ page_num }}</a>
+                <a class="btn btn-outline-info mb-4" href="{{ url_for('user_profile', username=user.username, page=page_num) }}">{{ page_num }}</a>
             {% endif %}
         {% else %}
         ...
