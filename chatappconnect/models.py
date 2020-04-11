@@ -1,5 +1,5 @@
 from datetime import datetime
-from chatapp import db, login_manager
+from chatappconnect import db, login_manager
 from flask_login import UserMixin
 
 

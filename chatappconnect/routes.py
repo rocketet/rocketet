@@ -3,9 +3,9 @@ import secrets
 from datetime import datetime
 from PIL import Image
 from flask import render_template, url_for, flash, redirect, request, abort
-from chatapp import app, db, bcrypt
-from chatapp.forms import SignupForm, LoginForm, UpdateAccountForm, PostForm, EditPostForm
-from chatapp.models import User, Post
+from chatappconnect import app, db, bcrypt
+from chatappconnect.forms import SignupForm, LoginForm, UpdateAccountForm, PostForm, EditPostForm
+from chatappconnect.models import User, Post
 from flask_login import login_user, current_user, logout_user, login_required
 
 @app.route("/")

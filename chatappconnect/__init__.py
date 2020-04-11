@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, url_for
 from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import Bcrypt
 from flask_login import LoginManager
@@ -10,6 +10,8 @@ app = Flask(__name__)
 
 app.config["SECRET_KEY"] = "0f0a2448bd028146bfa8f615ff308525"
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///site.db"
+# app.add_url_rule('/favicon.ico',
+#                  redirect_to=url_for('static', filename='favicon.ico'))
 
 db = SQLAlchemy(app)
 bcrypt = Bcrypt(app)
@@ -20,4 +22,4 @@ migrate = Migrate(app, db)
 manager = Manager(app)
 manager.add_command('db', MigrateCommand)
 
-from chatapp import routes
+from chatappconnect import routes
