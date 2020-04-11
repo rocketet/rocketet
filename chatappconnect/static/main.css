@@ -82,3 +82,21 @@ body {
   .account-heading {
     font-size: 2.5rem;
   }
+
+.menu-profile-btn {
+  background-color: transparent;
+  color: #cbd5db;
+}
+
+.menu-profile-btn:link .menu-profile-btn:visited {
+  color: #cbd5db;
+}
+
+.menu-profile-btn:hover .menu-profile-btn:active {
+  color: #ffffff;
+}
+
+.menu-profile-img {
+  width: 36px;
+  height: 36px;
+}
