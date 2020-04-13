@@ -1,6 +1,6 @@
 
 *.pyc
-chatapp/site.db
+chatappconnect/site.db
 migrations/alembic.ini
 migrations/env.py
 migrations/README
