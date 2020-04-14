@@ -9,3 +9,5 @@ migrations/versions/b91586580e7a_.py
 chatfusion/static/profile_pics/*.png
 chatfusion/static/profile_pics/*.jpg
 config.json
+.env
+env/*
