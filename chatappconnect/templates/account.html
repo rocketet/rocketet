@@ -53,5 +53,7 @@
                 {{ form.submit(class="btn btn-outline-info") }}
             </div>
         </form>
+        <legend class="border-bottom mb-4">Other Options</legend>
+        <a class="btn btn-outline-info"" href="{{ url_for('users.reset_password') }}">Change Password</a>
     </div>
 {% endblock content %}
