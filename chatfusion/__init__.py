@@ -6,7 +6,7 @@ from flask_login import LoginManager
 from flask_migrate import Migrate
 from flask_script import Manager
 from flask_mail import Mail
-from fusionchat.config import Config
+from chatfusion.config import Config
 
 
 db = SQLAlchemy()
@@ -28,10 +28,10 @@ def create_app(config_class=Config):
     migrate.init_app(app)
     mail.init_app(app)
 
-    from fusionchat.main.routes import main
-    from fusionchat.users.routes import users
-    from fusionchat.posts.routes import posts
-    from fusionchat.errors.handlers import errors
+    from chatfusion.main.routes import main
+    from chatfusion.users.routes import users
+    from chatfusion.posts.routes import posts
+    from chatfusion.errors.handlers import errors
 
     app.register_blueprint(main)
     app.register_blueprint(users)

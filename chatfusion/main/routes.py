@@ -1,5 +1,5 @@
 from flask import render_template, request, Blueprint, redirect, url_for
-from fusionchat.models import Post
+from chatfusion.models import Post
 from flask_login import login_required
 
 main = Blueprint("main", __name__)
