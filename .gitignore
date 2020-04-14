@@ -1,13 +1,14 @@
 
+# External stuff
 *.pyc
-chatfusion/site.db
-migrations/alembic.ini
-migrations/env.py
-migrations/README
-migrations/script.py.mako
-migrations/versions/b91586580e7a_.py
-chatfusion/static/profile_pics/*.png
-chatfusion/static/profile_pics/*.jpg
-config.json
+migrations/*
 .env
 env/*
+.vscode/*
+
+# Fusion Chat stuff
+chatfusion/static/profile_pics/*.png
+chatfusion/static/profile_pics/*.jpg
+chatfusion/site.db
+config.json
+
