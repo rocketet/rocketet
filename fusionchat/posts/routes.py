@@ -2,9 +2,9 @@ from datetime import datetime
 from flask import (render_template, url_for, flash,
                    redirect, request, abort, Blueprint)
 from flask_login import current_user, login_required
-from chatappconnect import db
-from chatappconnect.models import Post
-from chatappconnect.posts.forms import PostForm, EditPostForm
+from fusionchat import db
+from fusionchat.models import Post
+from fusionchat.posts.forms import PostForm, EditPostForm
 
 posts = Blueprint("posts", __name__)
 

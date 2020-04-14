@@ -4,7 +4,7 @@ from PIL import Image
 from flask import url_for, current_app
 from flask_mail import Message
 from flask_login import current_user
-from chatappconnect import mail
+from fusionchat import mail
 
 
 def save_picture(form_picture):
@@ -23,7 +23,7 @@ def save_picture(form_picture):
 def send_reset_email(user):
     token = user.get_reset_token()
     msg = Message("Password Reset Request",
-                  sender="ChatAppConnect",
+                  sender="Fusion Chat",
                   recipients=[user.email])
     msg.body = f"""To reset your password, visit the following link:
 {url_for('users.reset_token', token=token, _external=True)}

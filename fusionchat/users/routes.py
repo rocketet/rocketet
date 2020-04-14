@@ -1,10 +1,10 @@
 from flask import render_template, url_for, flash, redirect, request, Blueprint
 from flask_login import login_user, current_user, logout_user, login_required
-from chatappconnect import db, bcrypt
-from chatappconnect.models import User, Post
-from chatappconnect.users.forms import (SignupForm, LoginForm, UpdateAccountForm,
+from fusionchat import db, bcrypt
+from fusionchat.models import User, Post
+from fusionchat.users.forms import (SignupForm, LoginForm, UpdateAccountForm,
                                    RequestResetForm, ResetPasswordForm)
-from chatappconnect.users.utils import save_picture, send_reset_email, delete_old_picture
+from fusionchat.users.utils import save_picture, send_reset_email, delete_old_picture
 
 users = Blueprint("users", __name__)
 

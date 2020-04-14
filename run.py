@@ -1,4 +1,4 @@
-from chatappconnect import create_app
+from fusionchat import create_app
 
 app = create_app()
 

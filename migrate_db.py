@@ -1,6 +1,6 @@
 from flask_script import Manager
 from flask_migrate import MigrateCommand
-from chatappconnect import create_app
+from fusionchat import create_app
 
 app = create_app()
 
