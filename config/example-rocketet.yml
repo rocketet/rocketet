@@ -1,0 +1,10 @@
+# Rename this file to "rocketet.yml"
+
+postgres:
+  database: database_name
+  user: database_user
+  password: database_pass
+  host: localhost
+  port: 5432
+  minsize: 1
+  maxsize: 5

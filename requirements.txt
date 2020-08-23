@@ -1,0 +1,4 @@
+aiohttp
+pyyaml
+aiopg[sa]
+aiohttp_jinja2
